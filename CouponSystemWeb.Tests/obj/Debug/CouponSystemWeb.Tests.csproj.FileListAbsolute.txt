@@ -1,0 +1,35 @@
+C:\Users\admatis\Desktop\מהמחשב הקודם\לימודים\שנה ג'\סמסטר ב'\ניתוץ\עבודה 2\CouponSystemWeb\CouponSystemWeb.Tests\bin\Debug\CouponSystemWeb.Tests.dll
+C:\Users\admatis\Desktop\מהמחשב הקודם\לימודים\שנה ג'\סמסטר ב'\ניתוץ\עבודה 2\CouponSystemWeb\CouponSystemWeb.Tests\bin\Debug\CouponSystemWeb.Tests.pdb
+C:\Users\admatis\Desktop\מהמחשב הקודם\לימודים\שנה ג'\סמסטר ב'\ניתוץ\עבודה 2\CouponSystemWeb\CouponSystemWeb.Tests\obj\Debug\CouponSystemWeb.Tests.csprojResolveAssemblyReference.cache
+C:\Users\admatis\Desktop\מהמחשב הקודם\לימודים\שנה ג'\סמסטר ב'\ניתוץ\עבודה 2\CouponSystemWeb\CouponSystemWeb.Tests\obj\Debug\CouponSystemWeb.Tests.dll
+C:\Users\admatis\Desktop\מהמחשב הקודם\לימודים\שנה ג'\סמסטר ב'\ניתוץ\עבודה 2\CouponSystemWeb\CouponSystemWeb.Tests\obj\Debug\CouponSystemWeb.Tests.pdb
+C:\Users\Ester\Desktop\web\CouponSystemWeb.Tests\bin\Debug\CouponSystemWeb.Tests.dll
+C:\Users\Ester\Desktop\web\CouponSystemWeb.Tests\bin\Debug\CouponSystemWeb.Tests.pdb
+C:\Users\Ester\Desktop\web\CouponSystemWeb.Tests\obj\Debug\CouponSystemWeb.Tests.csprojResolveAssemblyReference.cache
+C:\Users\Ester\Desktop\web\CouponSystemWeb.Tests\obj\Debug\CouponSystemWeb.Tests.dll
+C:\Users\Ester\Desktop\web\CouponSystemWeb.Tests\obj\Debug\CouponSystemWeb.Tests.pdb
+C:\Users\Ester\Desktop\web\CouponSystemWeb.Tests\bin\Debug\CouponSystemWeb.dll
+C:\Users\Ester\Desktop\web\CouponSystemWeb.Tests\bin\Debug\EntityFramework.dll
+C:\Users\Ester\Desktop\web\CouponSystemWeb.Tests\bin\Debug\CouponSystemWeb.pdb
+C:\Users\Ester\Desktop\web\CouponSystemWeb.Tests\bin\Debug\EntityFramework.xml
+C:\לימודים\ניתוץ\CouponSystemWeb.Tests\bin\Debug\CouponSystemWeb.Tests.dll
+C:\לימודים\ניתוץ\CouponSystemWeb.Tests\bin\Debug\CouponSystemWeb.Tests.pdb
+C:\לימודים\ניתוץ\CouponSystemWeb.Tests\bin\Debug\CouponSystemWeb.dll
+C:\לימודים\ניתוץ\CouponSystemWeb.Tests\bin\Debug\EntityFramework.dll
+C:\לימודים\ניתוץ\CouponSystemWeb.Tests\bin\Debug\CouponSystemWeb.pdb
+C:\לימודים\ניתוץ\CouponSystemWeb.Tests\bin\Debug\EntityFramework.xml
+C:\לימודים\ניתוץ\CouponSystemWeb.Tests\obj\Debug\CouponSystemWeb.Tests.csprojResolveAssemblyReference.cache
+C:\לימודים\ניתוץ\CouponSystemWeb.Tests\obj\Debug\CouponSystemWeb.Tests.dll
+C:\לימודים\ניתוץ\CouponSystemWeb.Tests\obj\Debug\CouponSystemWeb.Tests.pdb
+C:\MICHAEL\ניתוץ-2\CouponSystemWeb.Tests\bin\Debug\CouponSystemWeb.Tests.dll
+C:\MICHAEL\ניתוץ-2\CouponSystemWeb.Tests\bin\Debug\CouponSystemWeb.Tests.pdb
+C:\MICHAEL\ניתוץ-2\CouponSystemWeb.Tests\bin\Debug\CouponSystemWeb.dll
+C:\MICHAEL\ניתוץ-2\CouponSystemWeb.Tests\bin\Debug\EntityFramework.dll
+C:\MICHAEL\ניתוץ-2\CouponSystemWeb.Tests\bin\Debug\CouponSystemWeb.pdb
+C:\MICHAEL\ניתוץ-2\CouponSystemWeb.Tests\bin\Debug\EntityFramework.xml
+C:\MICHAEL\ניתוץ-2\CouponSystemWeb.Tests\obj\Debug\CouponSystemWeb.Tests.csprojResolveAssemblyReference.cache
+C:\MICHAEL\ניתוץ-2\CouponSystemWeb.Tests\obj\Debug\CouponSystemWeb.Tests.dll
+C:\MICHAEL\ניתוץ-2\CouponSystemWeb.Tests\obj\Debug\CouponSystemWeb.Tests.pdb
+C:\Users\Ester\Desktop\web\CouponSystemWeb.Tests\bin\Debug\CouponSystemWeb.Tests.dll.config
+C:\Users\Ester\Desktop\web\CouponSystemWeb.Tests\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Ester\Desktop\web\CouponSystemWeb.Tests\bin\Debug\EntityFramework.SqlServer.xml

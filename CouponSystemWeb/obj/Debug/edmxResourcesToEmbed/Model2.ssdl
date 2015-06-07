@@ -1,0 +1,406 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CS_DB1Model.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="CS_DB1ModelStoreContainer">
+    <EntitySet Name="Buisnesses" EntityType="CS_DB1Model.Store.Buisnesses" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CatalogCoupons" EntityType="CS_DB1Model.Store.CatalogCoupons" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CatalogCoupons_SocialNetworkCoupon" EntityType="CS_DB1Model.Store.CatalogCoupons_SocialNetworkCoupon" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Categories" EntityType="CS_DB1Model.Store.Categories" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Locations" EntityType="CS_DB1Model.Store.Locations" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="OrderedCoupons" EntityType="CS_DB1Model.Store.OrderedCoupons" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Users" EntityType="CS_DB1Model.Store.Users" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Users_BuisnessOwner" EntityType="CS_DB1Model.Store.Users_BuisnessOwner" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Users_Customer" EntityType="CS_DB1Model.Store.Users_Customer" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Users_SystemAdministrator" EntityType="CS_DB1Model.Store.Users_SystemAdministrator" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CategoryCustomer" EntityType="CS_DB1Model.Store.CategoryCustomer" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_BuisnessOwner_inherits_User" Association="CS_DB1Model.Store.FK_BuisnessOwner_inherits_User">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Users_BuisnessOwner" EntitySet="Users_BuisnessOwner" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Customer_inherits_User" Association="CS_DB1Model.Store.FK_Customer_inherits_User">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Users_Customer" EntitySet="Users_Customer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SystemAdministrator_inherits_User" Association="CS_DB1Model.Store.FK_SystemAdministrator_inherits_User">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Users_SystemAdministrator" EntitySet="Users_SystemAdministrator" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CategoryCustomer_Categories" Association="CS_DB1Model.Store.FK_CategoryCustomer_Categories">
+      <End Role="Categories" EntitySet="Categories" />
+      <End Role="CategoryCustomer" EntitySet="CategoryCustomer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CategoryCustomer_Users_Customer" Association="CS_DB1Model.Store.FK_CategoryCustomer_Users_Customer">
+      <End Role="Users_Customer" EntitySet="Users_Customer" />
+      <End Role="CategoryCustomer" EntitySet="CategoryCustomer" />
+    </AssociationSet>
+    <AssociationSet Name="BuisnessLocation" Association="CS_DB1Model.Store.BuisnessLocation">
+      <End Role="Buisness" EntitySet="Buisnesses" />
+      <End Role="Location" EntitySet="Locations" />
+    </AssociationSet>
+    <AssociationSet Name="BuisnessUsers_BuisnessOwner" Association="CS_DB1Model.Store.BuisnessUsers_BuisnessOwner">
+      <End Role="Buisness" EntitySet="Buisnesses" />
+      <End Role="Users_BuisnessOwner" EntitySet="Users_BuisnessOwner" />
+    </AssociationSet>
+    <AssociationSet Name="BuisnessCategory" Association="CS_DB1Model.Store.BuisnessCategory">
+      <End Role="Buisness" EntitySet="Buisnesses" />
+      <End Role="Category" EntitySet="Categories" />
+    </AssociationSet>
+    <AssociationSet Name="Users_CustomerLocation" Association="CS_DB1Model.Store.Users_CustomerLocation">
+      <End Role="Users_Customer" EntitySet="Users_Customer" />
+      <End Role="Location" EntitySet="Locations" />
+    </AssociationSet>
+    <AssociationSet Name="CategoryCatalogCoupon" Association="CS_DB1Model.Store.CategoryCatalogCoupon">
+      <End Role="Category" EntitySet="Categories" />
+      <End Role="CatalogCoupon" EntitySet="CatalogCoupons" />
+    </AssociationSet>
+    <AssociationSet Name="Users_SystemAdministratorCatalogCoupon" Association="CS_DB1Model.Store.Users_SystemAdministratorCatalogCoupon">
+      <End Role="Users_SystemAdministrator" EntitySet="Users_SystemAdministrator" />
+      <End Role="CatalogCoupon" EntitySet="CatalogCoupons" />
+    </AssociationSet>
+    <AssociationSet Name="CatalogCouponLocation" Association="CS_DB1Model.Store.CatalogCouponLocation">
+      <End Role="CatalogCoupon" EntitySet="CatalogCoupons" />
+      <End Role="Location" EntitySet="Locations" />
+    </AssociationSet>
+    <AssociationSet Name="BuisnessCatalogCoupon" Association="CS_DB1Model.Store.BuisnessCatalogCoupon">
+      <End Role="Buisness" EntitySet="Buisnesses" />
+      <End Role="CatalogCoupon" EntitySet="CatalogCoupons" />
+    </AssociationSet>
+    <AssociationSet Name="OrderedCouponCatalogCoupon" Association="CS_DB1Model.Store.OrderedCouponCatalogCoupon">
+      <End Role="OrderedCoupon" EntitySet="OrderedCoupons" />
+      <End Role="CatalogCoupon" EntitySet="CatalogCoupons" />
+    </AssociationSet>
+    <AssociationSet Name="Users_CustomerOrderedCoupon" Association="CS_DB1Model.Store.Users_CustomerOrderedCoupon">
+      <End Role="Users_Customer" EntitySet="Users_Customer" />
+      <End Role="OrderedCoupon" EntitySet="OrderedCoupons" />
+    </AssociationSet>
+    <AssociationSet Name="CatalogCoupons_SocialNetworkCouponUser" Association="CS_DB1Model.Store.CatalogCoupons_SocialNetworkCouponUser">
+      <End Role="CatalogCoupons_SocialNetworkCoupon" EntitySet="CatalogCoupons_SocialNetworkCoupon" />
+      <End Role="User" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="CatalogCoupons_SocialNetworkCouponCatalogCoupon" Association="CS_DB1Model.Store.CatalogCoupons_SocialNetworkCouponCatalogCoupon">
+      <End Role="CatalogCoupons_SocialNetworkCoupon" EntitySet="CatalogCoupons_SocialNetworkCoupon" />
+      <End Role="CatalogCoupon" EntitySet="CatalogCoupons" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Buisnesses">
+    <Key>
+      <PropertyRef Name="buisName" />
+    </Key>
+    <Property Name="buisName" Type="varchar" Nullable="false" MaxLength="500" />
+    <Property Name="buisAddress" Type="varchar" Nullable="false" MaxLength="500" />
+    <Property Name="buisCity" Type="varchar" Nullable="false" MaxLength="500" />
+    <Property Name="BuisDescription" Type="varchar" Nullable="false" MaxLength="500" />
+    <Property Name="Status" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="Location_latitude" Type="float" Nullable="false" />
+    <Property Name="Location_longitude" Type="float" Nullable="false" />
+    <Property Name="Users_BuisnessOwner_userName" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="Category_catName" Type="varchar" MaxLength="500" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CatalogCoupons">
+    <Key>
+      <PropertyRef Name="catalogID" />
+    </Key>
+    <Property Name="catalogID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CouponName" Type="varchar" Nullable="true" MaxLength="500" />
+    <Property Name="originalPrice" Type="float" Nullable="true" />
+    <Property Name="priceAfterDiscount" Type="float" Nullable="true" />
+    <Property Name="deadLineForUse" Type="datetime" Nullable="true" />
+    <Property Name="averageRank" Type="float" Nullable="true" />
+    <Property Name="description" Type="varchar" Nullable="true" MaxLength="500" />
+    <Property Name="Status" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="Category_catName" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="Users_SystemAdministrator_userName" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="Location_latitude" Type="float" Nullable="false" />
+    <Property Name="Location_longitude" Type="float" Nullable="false" />
+    <Property Name="Buisness_buisName" Type="varchar" MaxLength="500" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CatalogCoupons_SocialNetworkCoupon">
+    <Key>
+      <PropertyRef Name="CatalogID" />
+    </Key>
+    <Property Name="origionWebsite" Type="varchar" Nullable="true" MaxLength="500" />
+    <Property Name="CatalogID" Type="int" Nullable="false" />
+    <Property Name="User_userName" Type="varchar" MaxLength="500" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Categories">
+    <Key>
+      <PropertyRef Name="catName" />
+    </Key>
+    <Property Name="catName" Type="varchar" Nullable="false" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="Locations">
+    <Key>
+      <PropertyRef Name="latitude" />
+      <PropertyRef Name="longitude" />
+    </Key>
+    <Property Name="latitude" Type="float" Nullable="false" />
+    <Property Name="longitude" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OrderedCoupons">
+    <Key>
+      <PropertyRef Name="serialKey" />
+    </Key>
+    <Property Name="serialKey" Type="varchar" Nullable="false" MaxLength="500" />
+    <Property Name="rank" Type="smallint" Nullable="true" />
+    <Property Name="isUsed" Type="bit" Nullable="true" />
+    <Property Name="dateOfUse" Type="datetime" Nullable="true" />
+    <Property Name="dateOfPurchase" Type="datetime" Nullable="true" />
+    <Property Name="CatalogCoupon_catalogID" Type="int" Nullable="false" />
+    <Property Name="Users_Customer_userName" Type="varchar" MaxLength="500" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="userName" />
+    </Key>
+    <Property Name="userName" Type="varchar" Nullable="false" MaxLength="500" />
+    <Property Name="password" Type="varchar" Nullable="true" MaxLength="500" />
+    <Property Name="fullName" Type="varchar" Nullable="true" MaxLength="500" />
+    <Property Name="email" Type="varchar" Nullable="true" MaxLength="500" />
+    <Property Name="phone" Type="varchar" Nullable="true" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="Users_BuisnessOwner">
+    <Key>
+      <PropertyRef Name="userName" />
+    </Key>
+    <Property Name="userName" Type="varchar" Nullable="false" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="Users_Customer">
+    <Key>
+      <PropertyRef Name="userName" />
+    </Key>
+    <Property Name="age" Type="smallint" Nullable="true" />
+    <Property Name="gender" Type="varchar" Nullable="true" MaxLength="500" />
+    <Property Name="userName" Type="varchar" Nullable="false" MaxLength="500" />
+    <Property Name="Location_latitude" Type="float" Nullable="false" />
+    <Property Name="Location_longitude" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Users_SystemAdministrator">
+    <Key>
+      <PropertyRef Name="userName" />
+    </Key>
+    <Property Name="userName" Type="varchar" Nullable="false" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="CategoryCustomer">
+    <Key>
+      <PropertyRef Name="Categories_catName" />
+      <PropertyRef Name="Users_Customer_userName" />
+    </Key>
+    <Property Name="Categories_catName" Type="varchar" Nullable="false" MaxLength="500" />
+    <Property Name="Users_Customer_userName" Type="varchar" Nullable="false" MaxLength="500" />
+  </EntityType>
+  <Association Name="FK_BuisnessOwner_inherits_User">
+    <End Role="Users" Type="CS_DB1Model.Store.Users" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Users_BuisnessOwner" Type="CS_DB1Model.Store.Users_BuisnessOwner" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="userName" />
+      </Principal>
+      <Dependent Role="Users_BuisnessOwner">
+        <PropertyRef Name="userName" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Customer_inherits_User">
+    <End Role="Users" Type="CS_DB1Model.Store.Users" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Users_Customer" Type="CS_DB1Model.Store.Users_Customer" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="userName" />
+      </Principal>
+      <Dependent Role="Users_Customer">
+        <PropertyRef Name="userName" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SystemAdministrator_inherits_User">
+    <End Role="Users" Type="CS_DB1Model.Store.Users" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Users_SystemAdministrator" Type="CS_DB1Model.Store.Users_SystemAdministrator" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="userName" />
+      </Principal>
+      <Dependent Role="Users_SystemAdministrator">
+        <PropertyRef Name="userName" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="BuisnessLocation">
+    <End Role="Buisness" Type="CS_DB1Model.Store.Buisnesses" Multiplicity="*" />
+    <End Role="Location" Type="CS_DB1Model.Store.Locations" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Location">
+        <PropertyRef Name="latitude" />
+        <PropertyRef Name="longitude" />
+      </Principal>
+      <Dependent Role="Buisness">
+        <PropertyRef Name="Location_latitude" />
+        <PropertyRef Name="Location_longitude" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="BuisnessUsers_BuisnessOwner">
+    <End Role="Buisness" Type="CS_DB1Model.Store.Buisnesses" Multiplicity="*" />
+    <End Role="Users_BuisnessOwner" Type="CS_DB1Model.Store.Users_BuisnessOwner" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Users_BuisnessOwner">
+        <PropertyRef Name="userName" />
+      </Principal>
+      <Dependent Role="Buisness">
+        <PropertyRef Name="Users_BuisnessOwner_userName" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="BuisnessCategory">
+    <End Role="Buisness" Type="CS_DB1Model.Store.Buisnesses" Multiplicity="*" />
+    <End Role="Category" Type="CS_DB1Model.Store.Categories" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="catName" />
+      </Principal>
+      <Dependent Role="Buisness">
+        <PropertyRef Name="Category_catName" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Users_CustomerLocation">
+    <End Role="Users_Customer" Type="CS_DB1Model.Store.Users_Customer" Multiplicity="*" />
+    <End Role="Location" Type="CS_DB1Model.Store.Locations" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Location">
+        <PropertyRef Name="latitude" />
+        <PropertyRef Name="longitude" />
+      </Principal>
+      <Dependent Role="Users_Customer">
+        <PropertyRef Name="Location_latitude" />
+        <PropertyRef Name="Location_longitude" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CategoryCatalogCoupon">
+    <End Role="Category" Type="CS_DB1Model.Store.Categories" Multiplicity="1" />
+    <End Role="CatalogCoupon" Type="CS_DB1Model.Store.CatalogCoupons" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="catName" />
+      </Principal>
+      <Dependent Role="CatalogCoupon">
+        <PropertyRef Name="Category_catName" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Users_SystemAdministratorCatalogCoupon">
+    <End Role="Users_SystemAdministrator" Type="CS_DB1Model.Store.Users_SystemAdministrator" Multiplicity="1" />
+    <End Role="CatalogCoupon" Type="CS_DB1Model.Store.CatalogCoupons" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users_SystemAdministrator">
+        <PropertyRef Name="userName" />
+      </Principal>
+      <Dependent Role="CatalogCoupon">
+        <PropertyRef Name="Users_SystemAdministrator_userName" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CatalogCouponLocation">
+    <End Role="CatalogCoupon" Type="CS_DB1Model.Store.CatalogCoupons" Multiplicity="*" />
+    <End Role="Location" Type="CS_DB1Model.Store.Locations" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Location">
+        <PropertyRef Name="latitude" />
+        <PropertyRef Name="longitude" />
+      </Principal>
+      <Dependent Role="CatalogCoupon">
+        <PropertyRef Name="Location_latitude" />
+        <PropertyRef Name="Location_longitude" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="BuisnessCatalogCoupon">
+    <End Role="Buisness" Type="CS_DB1Model.Store.Buisnesses" Multiplicity="1" />
+    <End Role="CatalogCoupon" Type="CS_DB1Model.Store.CatalogCoupons" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Buisness">
+        <PropertyRef Name="buisName" />
+      </Principal>
+      <Dependent Role="CatalogCoupon">
+        <PropertyRef Name="Buisness_buisName" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="OrderedCouponCatalogCoupon">
+    <End Role="OrderedCoupon" Type="CS_DB1Model.Store.OrderedCoupons" Multiplicity="*" />
+    <End Role="CatalogCoupon" Type="CS_DB1Model.Store.CatalogCoupons" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="CatalogCoupon">
+        <PropertyRef Name="catalogID" />
+      </Principal>
+      <Dependent Role="OrderedCoupon">
+        <PropertyRef Name="CatalogCoupon_catalogID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Users_CustomerOrderedCoupon">
+    <End Role="Users_Customer" Type="CS_DB1Model.Store.Users_Customer" Multiplicity="1" />
+    <End Role="OrderedCoupon" Type="CS_DB1Model.Store.OrderedCoupons" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users_Customer">
+        <PropertyRef Name="userName" />
+      </Principal>
+      <Dependent Role="OrderedCoupon">
+        <PropertyRef Name="Users_Customer_userName" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CatalogCoupons_SocialNetworkCouponUser">
+    <End Role="CatalogCoupons_SocialNetworkCoupon" Type="CS_DB1Model.Store.CatalogCoupons_SocialNetworkCoupon" Multiplicity="*" />
+    <End Role="User" Type="CS_DB1Model.Store.Users" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="userName" />
+      </Principal>
+      <Dependent Role="CatalogCoupons_SocialNetworkCoupon">
+        <PropertyRef Name="User_userName" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CatalogCoupons_SocialNetworkCouponCatalogCoupon">
+    <End Role="CatalogCoupons_SocialNetworkCoupon" Type="CS_DB1Model.Store.CatalogCoupons_SocialNetworkCoupon" Multiplicity="0..1" />
+    <End Role="CatalogCoupon" Type="CS_DB1Model.Store.CatalogCoupons" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="CatalogCoupon">
+        <PropertyRef Name="catalogID" />
+      </Principal>
+      <Dependent Role="CatalogCoupons_SocialNetworkCoupon">
+        <PropertyRef Name="CatalogID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CategoryCustomer_Categories">
+    <End Role="Categories" Type="CS_DB1Model.Store.Categories" Multiplicity="1" />
+    <End Role="CategoryCustomer" Type="CS_DB1Model.Store.CategoryCustomer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Categories">
+        <PropertyRef Name="catName" />
+      </Principal>
+      <Dependent Role="CategoryCustomer">
+        <PropertyRef Name="Categories_catName" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CategoryCustomer_Users_Customer">
+    <End Role="CategoryCustomer" Type="CS_DB1Model.Store.CategoryCustomer" Multiplicity="*" />
+    <End Role="Users_Customer" Type="CS_DB1Model.Store.Users_Customer" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Users_Customer">
+        <PropertyRef Name="userName" />
+      </Principal>
+      <Dependent Role="CategoryCustomer">
+        <PropertyRef Name="Users_Customer_userName" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

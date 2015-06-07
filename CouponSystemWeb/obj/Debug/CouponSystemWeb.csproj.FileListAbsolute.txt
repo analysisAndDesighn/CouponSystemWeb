@@ -1,0 +1,40 @@
+C:\Users\admatis\Desktop\מהמחשב הקודם\לימודים\שנה ג'\סמסטר ב'\ניתוץ\עבודה 2\CouponSystemWeb\CouponSystemWeb\bin\CouponSystemWeb.dll.config
+C:\Users\admatis\Desktop\מהמחשב הקודם\לימודים\שנה ג'\סמסטר ב'\ניתוץ\עבודה 2\CouponSystemWeb\CouponSystemWeb\bin\CouponSystemWeb.dll
+C:\Users\admatis\Desktop\מהמחשב הקודם\לימודים\שנה ג'\סמסטר ב'\ניתוץ\עבודה 2\CouponSystemWeb\CouponSystemWeb\bin\CouponSystemWeb.pdb
+C:\Users\admatis\Desktop\מהמחשב הקודם\לימודים\שנה ג'\סמסטר ב'\ניתוץ\עבודה 2\CouponSystemWeb\CouponSystemWeb\obj\Debug\CouponSystemWeb.csprojResolveAssemblyReference.cache
+C:\Users\admatis\Desktop\מהמחשב הקודם\לימודים\שנה ג'\סמסטר ב'\ניתוץ\עבודה 2\CouponSystemWeb\CouponSystemWeb\obj\Debug\CouponSystemWeb.dll
+C:\Users\admatis\Desktop\מהמחשב הקודם\לימודים\שנה ג'\סמסטר ב'\ניתוץ\עבודה 2\CouponSystemWeb\CouponSystemWeb\obj\Debug\CouponSystemWeb.pdb
+C:\Users\admatis\Desktop\מהמחשב הקודם\לימודים\שנה ג'\סמסטר ב'\ניתוץ\עבודה 2\CouponSystemWeb\CouponSystemWeb\bin\EntityFramework.dll
+C:\Users\admatis\Desktop\מהמחשב הקודם\לימודים\שנה ג'\סמסטר ב'\ניתוץ\עבודה 2\CouponSystemWeb\CouponSystemWeb\bin\EntityFramework.xml
+C:\Users\admatis\Desktop\מהמחשב הקודם\לימודים\שנה ג'\סמסטר ב'\ניתוץ\עבודה 2\CouponSystemWeb\CouponSystemWeb\bin\EntityFramework.SqlServer.dll
+C:\Users\admatis\Desktop\מהמחשב הקודם\לימודים\שנה ג'\סמסטר ב'\ניתוץ\עבודה 2\CouponSystemWeb\CouponSystemWeb\bin\EntityFramework.SqlServer.xml
+C:\Users\Ester\Desktop\web\CouponSystemWeb\bin\CouponSystemWeb.dll.config
+C:\Users\Ester\Desktop\web\CouponSystemWeb\bin\CouponSystemWeb.dll
+C:\Users\Ester\Desktop\web\CouponSystemWeb\bin\CouponSystemWeb.pdb
+C:\Users\Ester\Desktop\web\CouponSystemWeb\bin\EntityFramework.dll
+C:\Users\Ester\Desktop\web\CouponSystemWeb\bin\EntityFramework.SqlServer.dll
+C:\Users\Ester\Desktop\web\CouponSystemWeb\bin\EntityFramework.xml
+C:\Users\Ester\Desktop\web\CouponSystemWeb\bin\EntityFramework.SqlServer.xml
+C:\Users\Ester\Desktop\web\CouponSystemWeb\obj\Debug\CouponSystemWeb.csprojResolveAssemblyReference.cache
+C:\Users\Ester\Desktop\web\CouponSystemWeb\obj\Debug\CouponSystemWeb.dll
+C:\Users\Ester\Desktop\web\CouponSystemWeb\obj\Debug\CouponSystemWeb.pdb
+C:\לימודים\ניתוץ\CouponSystemWeb\bin\CouponSystemWeb.dll.config
+C:\לימודים\ניתוץ\CouponSystemWeb\bin\CouponSystemWeb.dll
+C:\לימודים\ניתוץ\CouponSystemWeb\bin\CouponSystemWeb.pdb
+C:\לימודים\ניתוץ\CouponSystemWeb\bin\EntityFramework.dll
+C:\לימודים\ניתוץ\CouponSystemWeb\bin\EntityFramework.SqlServer.dll
+C:\לימודים\ניתוץ\CouponSystemWeb\bin\EntityFramework.xml
+C:\לימודים\ניתוץ\CouponSystemWeb\bin\EntityFramework.SqlServer.xml
+C:\לימודים\ניתוץ\CouponSystemWeb\obj\Debug\CouponSystemWeb.csprojResolveAssemblyReference.cache
+C:\לימודים\ניתוץ\CouponSystemWeb\obj\Debug\CouponSystemWeb.dll
+C:\לימודים\ניתוץ\CouponSystemWeb\obj\Debug\CouponSystemWeb.pdb
+C:\MICHAEL\ניתוץ-2\CouponSystemWeb\bin\CouponSystemWeb.dll.config
+C:\MICHAEL\ניתוץ-2\CouponSystemWeb\bin\CouponSystemWeb.dll
+C:\MICHAEL\ניתוץ-2\CouponSystemWeb\bin\CouponSystemWeb.pdb
+C:\MICHAEL\ניתוץ-2\CouponSystemWeb\bin\EntityFramework.dll
+C:\MICHAEL\ניתוץ-2\CouponSystemWeb\bin\EntityFramework.SqlServer.dll
+C:\MICHAEL\ניתוץ-2\CouponSystemWeb\bin\EntityFramework.xml
+C:\MICHAEL\ניתוץ-2\CouponSystemWeb\bin\EntityFramework.SqlServer.xml
+C:\MICHAEL\ניתוץ-2\CouponSystemWeb\obj\Debug\CouponSystemWeb.csprojResolveAssemblyReference.cache
+C:\MICHAEL\ניתוץ-2\CouponSystemWeb\obj\Debug\CouponSystemWeb.dll
+C:\MICHAEL\ניתוץ-2\CouponSystemWeb\obj\Debug\CouponSystemWeb.pdb

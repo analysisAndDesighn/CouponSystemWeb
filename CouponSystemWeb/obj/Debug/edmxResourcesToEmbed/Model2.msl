@@ -1,0 +1,197 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CS_DB1ModelStoreContainer" CdmEntityContainer="CS_DBEntities3">
+    <EntitySetMapping Name="Buisnesses">
+      <EntityTypeMapping TypeName="IsTypeOf(CS_DB1Model.Buisness)">
+        <MappingFragment StoreEntitySet="Buisnesses">
+          <ScalarProperty Name="buisName" ColumnName="buisName" />
+          <ScalarProperty Name="buisAddress" ColumnName="buisAddress" />
+          <ScalarProperty Name="buisCity" ColumnName="buisCity" />
+          <ScalarProperty Name="BuisDescription" ColumnName="BuisDescription" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CatalogCoupons">
+      <EntityTypeMapping TypeName="IsTypeOf(CS_DB1Model.CatalogCoupon)">
+        <MappingFragment StoreEntitySet="CatalogCoupons">
+          <ScalarProperty Name="catalogID" ColumnName="catalogID" />
+          <ScalarProperty Name="CouponName" ColumnName="CouponName" />
+          <ScalarProperty Name="originalPrice" ColumnName="originalPrice" />
+          <ScalarProperty Name="priceAfterDiscount" ColumnName="priceAfterDiscount" />
+          <ScalarProperty Name="deadLineForUse" ColumnName="deadLineForUse" />
+          <ScalarProperty Name="averageRank" ColumnName="averageRank" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Categories">
+      <EntityTypeMapping TypeName="IsTypeOf(CS_DB1Model.Category)">
+        <MappingFragment StoreEntitySet="Categories">
+          <ScalarProperty Name="catName" ColumnName="catName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Locations">
+      <EntityTypeMapping TypeName="IsTypeOf(CS_DB1Model.Location)">
+        <MappingFragment StoreEntitySet="Locations">
+          <ScalarProperty Name="latitude" ColumnName="latitude" />
+          <ScalarProperty Name="longitude" ColumnName="longitude" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OrderedCoupons">
+      <EntityTypeMapping TypeName="IsTypeOf(CS_DB1Model.OrderedCoupon)">
+        <MappingFragment StoreEntitySet="OrderedCoupons">
+          <ScalarProperty Name="serialKey" ColumnName="serialKey" />
+          <ScalarProperty Name="rank" ColumnName="rank" />
+          <ScalarProperty Name="isUsed" ColumnName="isUsed" />
+          <ScalarProperty Name="dateOfUse" ColumnName="dateOfUse" />
+          <ScalarProperty Name="dateOfPurchase" ColumnName="dateOfPurchase" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="IsTypeOf(CS_DB1Model.User)">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="userName" ColumnName="userName" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="fullName" ColumnName="fullName" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users_BuisnessOwner">
+      <EntityTypeMapping TypeName="IsTypeOf(CS_DB1Model.Users_BuisnessOwner)">
+        <MappingFragment StoreEntitySet="Users_BuisnessOwner">
+          <ScalarProperty Name="userName" ColumnName="userName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users_Customer">
+      <EntityTypeMapping TypeName="IsTypeOf(CS_DB1Model.Users_Customer)">
+        <MappingFragment StoreEntitySet="Users_Customer">
+          <ScalarProperty Name="userName" ColumnName="userName" />
+          <ScalarProperty Name="age" ColumnName="age" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users_SystemAdministrator">
+      <EntityTypeMapping TypeName="IsTypeOf(CS_DB1Model.Users_SystemAdministrator)">
+        <MappingFragment StoreEntitySet="Users_SystemAdministrator">
+          <ScalarProperty Name="userName" ColumnName="userName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CatalogCoupons_SocialNetworkCoupon">
+      <EntityTypeMapping TypeName="IsTypeOf(CS_DB1Model.CatalogCoupons_SocialNetworkCoupon)">
+        <MappingFragment StoreEntitySet="CatalogCoupons_SocialNetworkCoupon">
+          <ScalarProperty Name="CatalogID" ColumnName="CatalogID" />
+          <ScalarProperty Name="origionWebsite" ColumnName="origionWebsite" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="CategoryCustomer" TypeName="CS_DB1Model.CategoryCustomer" StoreEntitySet="CategoryCustomer">
+      <EndProperty Name="Categories">
+        <ScalarProperty Name="catName" ColumnName="Categories_catName" />
+      </EndProperty>
+      <EndProperty Name="Users_Customer">
+        <ScalarProperty Name="userName" ColumnName="Users_Customer_userName" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="BuisnessLocation" TypeName="CS_DB1Model.BuisnessLocation" StoreEntitySet="Buisnesses">
+      <EndProperty Name="Location">
+        <ScalarProperty Name="latitude" ColumnName="Location_latitude" />
+        <ScalarProperty Name="longitude" ColumnName="Location_longitude" />
+      </EndProperty>
+      <EndProperty Name="Buisness">
+        <ScalarProperty Name="buisName" ColumnName="buisName" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="BuisnessUsers_BuisnessOwner" TypeName="CS_DB1Model.BuisnessUsers_BuisnessOwner" StoreEntitySet="Buisnesses">
+      <EndProperty Name="Users_BuisnessOwner">
+        <ScalarProperty Name="userName" ColumnName="Users_BuisnessOwner_userName" />
+      </EndProperty>
+      <EndProperty Name="Buisness">
+        <ScalarProperty Name="buisName" ColumnName="buisName" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="BuisnessCategory" TypeName="CS_DB1Model.BuisnessCategory" StoreEntitySet="Buisnesses">
+      <EndProperty Name="Category">
+        <ScalarProperty Name="catName" ColumnName="Category_catName" />
+      </EndProperty>
+      <EndProperty Name="Buisness">
+        <ScalarProperty Name="buisName" ColumnName="buisName" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="Users_CustomerLocation" TypeName="CS_DB1Model.Users_CustomerLocation" StoreEntitySet="Users_Customer">
+      <EndProperty Name="Location">
+        <ScalarProperty Name="latitude" ColumnName="Location_latitude" />
+        <ScalarProperty Name="longitude" ColumnName="Location_longitude" />
+      </EndProperty>
+      <EndProperty Name="Users_Customer">
+        <ScalarProperty Name="userName" ColumnName="userName" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="CategoryCatalogCoupon" TypeName="CS_DB1Model.CategoryCatalogCoupon" StoreEntitySet="CatalogCoupons">
+      <EndProperty Name="Category">
+        <ScalarProperty Name="catName" ColumnName="Category_catName" />
+      </EndProperty>
+      <EndProperty Name="CatalogCoupon">
+        <ScalarProperty Name="catalogID" ColumnName="catalogID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="Users_SystemAdministratorCatalogCoupon" TypeName="CS_DB1Model.Users_SystemAdministratorCatalogCoupon" StoreEntitySet="CatalogCoupons">
+      <EndProperty Name="Users_SystemAdministrator">
+        <ScalarProperty Name="userName" ColumnName="Users_SystemAdministrator_userName" />
+      </EndProperty>
+      <EndProperty Name="CatalogCoupon">
+        <ScalarProperty Name="catalogID" ColumnName="catalogID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="CatalogCouponLocation" TypeName="CS_DB1Model.CatalogCouponLocation" StoreEntitySet="CatalogCoupons">
+      <EndProperty Name="Location">
+        <ScalarProperty Name="latitude" ColumnName="Location_latitude" />
+        <ScalarProperty Name="longitude" ColumnName="Location_longitude" />
+      </EndProperty>
+      <EndProperty Name="CatalogCoupon">
+        <ScalarProperty Name="catalogID" ColumnName="catalogID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="BuisnessCatalogCoupon" TypeName="CS_DB1Model.BuisnessCatalogCoupon" StoreEntitySet="CatalogCoupons">
+      <EndProperty Name="Buisness">
+        <ScalarProperty Name="buisName" ColumnName="Buisness_buisName" />
+      </EndProperty>
+      <EndProperty Name="CatalogCoupon">
+        <ScalarProperty Name="catalogID" ColumnName="catalogID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="OrderedCouponCatalogCoupon" TypeName="CS_DB1Model.OrderedCouponCatalogCoupon" StoreEntitySet="OrderedCoupons">
+      <EndProperty Name="CatalogCoupon">
+        <ScalarProperty Name="catalogID" ColumnName="CatalogCoupon_catalogID" />
+      </EndProperty>
+      <EndProperty Name="OrderedCoupon">
+        <ScalarProperty Name="serialKey" ColumnName="serialKey" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="Users_CustomerOrderedCoupon" TypeName="CS_DB1Model.Users_CustomerOrderedCoupon" StoreEntitySet="OrderedCoupons">
+      <EndProperty Name="Users_Customer">
+        <ScalarProperty Name="userName" ColumnName="Users_Customer_userName" />
+      </EndProperty>
+      <EndProperty Name="OrderedCoupon">
+        <ScalarProperty Name="serialKey" ColumnName="serialKey" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="CatalogCoupons_SocialNetworkCouponUser" TypeName="CS_DB1Model.CatalogCoupons_SocialNetworkCouponUser" StoreEntitySet="CatalogCoupons_SocialNetworkCoupon">
+      <EndProperty Name="User">
+        <ScalarProperty Name="userName" ColumnName="User_userName" />
+      </EndProperty>
+      <EndProperty Name="CatalogCoupons_SocialNetworkCoupon">
+        <ScalarProperty Name="CatalogID" ColumnName="CatalogID" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

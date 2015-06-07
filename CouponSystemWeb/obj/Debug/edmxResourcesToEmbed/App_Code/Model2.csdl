@@ -1,0 +1,288 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CS_DB1Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Buisness">
+    <Key>
+      <PropertyRef Name="buisName" />
+    </Key>
+    <Property Name="buisName" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="buisAddress" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="buisCity" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="BuisDescription" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Location" Relationship="CS_DB1Model.BuisnessLocation" FromRole="Buisness" ToRole="Location" />
+    <NavigationProperty Name="Users_BuisnessOwner" Relationship="CS_DB1Model.BuisnessUsers_BuisnessOwner" FromRole="Buisness" ToRole="Users_BuisnessOwner" />
+    <NavigationProperty Name="Category" Relationship="CS_DB1Model.BuisnessCategory" FromRole="Buisness" ToRole="Category" />
+    <NavigationProperty Name="CatalogCoupons" Relationship="CS_DB1Model.BuisnessCatalogCoupon" FromRole="Buisness" ToRole="CatalogCoupon" />
+  </EntityType>
+  <EntityType Name="CatalogCoupon">
+    <Key>
+      <PropertyRef Name="catalogID" />
+    </Key>
+    <Property Name="catalogID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CouponName" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="originalPrice" Type="Double" />
+    <Property Name="priceAfterDiscount" Type="Double" />
+    <Property Name="deadLineForUse" Type="DateTime" Precision="3" />
+    <Property Name="averageRank" Type="Double" />
+    <Property Name="description" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Category" Relationship="CS_DB1Model.CategoryCatalogCoupon" FromRole="CatalogCoupon" ToRole="Category" />
+    <NavigationProperty Name="Users_SystemAdministrator" Relationship="CS_DB1Model.Users_SystemAdministratorCatalogCoupon" FromRole="CatalogCoupon" ToRole="Users_SystemAdministrator" />
+    <NavigationProperty Name="Location" Relationship="CS_DB1Model.CatalogCouponLocation" FromRole="CatalogCoupon" ToRole="Location" />
+    <NavigationProperty Name="Buisness" Relationship="CS_DB1Model.BuisnessCatalogCoupon" FromRole="CatalogCoupon" ToRole="Buisness" />
+    <NavigationProperty Name="CatalogCoupons_SocialNetworkCoupon" Relationship="CS_DB1Model.CatalogCoupons_SocialNetworkCouponCatalogCoupon" FromRole="CatalogCoupon" ToRole="CatalogCoupons_SocialNetworkCoupon" />
+    <NavigationProperty Name="OrderedCoupons" Relationship="CS_DB1Model.OrderedCouponCatalogCoupon" FromRole="CatalogCoupon" ToRole="OrderedCoupon" />
+  </EntityType>
+  <EntityType Name="CatalogCoupons_SocialNetworkCoupon">
+    <Key>
+      <PropertyRef Name="socialCatalogID" />
+    </Key>
+    <Property Name="origionWebsite" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Users_Customer" Relationship="CS_DB1Model.Users_CustomerCatalogCoupons_SocialNetworkCoupon" FromRole="CatalogCoupons_SocialNetworkCoupon" ToRole="Users_Customer" />
+    <NavigationProperty Name="CatalogCoupon" Relationship="CS_DB1Model.CatalogCoupons_SocialNetworkCouponCatalogCoupon" FromRole="CatalogCoupons_SocialNetworkCoupon" ToRole="CatalogCoupon" />
+    <Property Name="socialCatalogID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="catName" />
+    </Key>
+    <Property Name="catName" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Users_Customer" Relationship="Self.CategoryCustomer" FromRole="Categories" ToRole="Users_Customer" />
+    <NavigationProperty Name="Buisnesses" Relationship="CS_DB1Model.BuisnessCategory" FromRole="Category" ToRole="Buisness" />
+    <NavigationProperty Name="CatalogCoupons" Relationship="CS_DB1Model.CategoryCatalogCoupon" FromRole="Category" ToRole="CatalogCoupon" />
+  </EntityType>
+  <EntityType Name="Location">
+    <Key>
+      <PropertyRef Name="latitude" />
+      <PropertyRef Name="longitude" />
+    </Key>
+    <Property Name="latitude" Type="Double" Nullable="false" />
+    <Property Name="longitude" Type="Double" Nullable="false" />
+    <Property Name="city" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Buisnesses" Relationship="CS_DB1Model.BuisnessLocation" FromRole="Location" ToRole="Buisness" />
+    <NavigationProperty Name="Users_Customer" Relationship="CS_DB1Model.Users_CustomerLocation" FromRole="Location" ToRole="Users_Customer" />
+    <NavigationProperty Name="CatalogCoupons" Relationship="CS_DB1Model.CatalogCouponLocation" FromRole="Location" ToRole="CatalogCoupon" />
+  </EntityType>
+  <EntityType Name="OrderedCoupon">
+    <Key>
+      <PropertyRef Name="serialKey" />
+    </Key>
+    <Property Name="serialKey" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="rank" Type="Int16" />
+    <Property Name="isUsed" Type="Boolean" />
+    <Property Name="dateOfUse" Type="DateTime" Precision="3" />
+    <Property Name="dateOfPurchase" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="CatalogCoupon" Relationship="CS_DB1Model.OrderedCouponCatalogCoupon" FromRole="OrderedCoupon" ToRole="CatalogCoupon" />
+    <NavigationProperty Name="Users_Customer" Relationship="CS_DB1Model.Users_CustomerOrderedCoupon" FromRole="OrderedCoupon" ToRole="Users_Customer" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="userName" />
+    </Key>
+    <Property Name="userName" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="password" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="fullName" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="email" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="phone" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Users_BuisnessOwner" Relationship="Self.FK_BuisnessOwner_inherits_User" FromRole="Users" ToRole="Users_BuisnessOwner" />
+    <NavigationProperty Name="Users_Customer" Relationship="Self.FK_Customer_inherits_User" FromRole="Users" ToRole="Users_Customer" />
+    <NavigationProperty Name="Users_SystemAdministrator" Relationship="Self.FK_SystemAdministrator_inherits_User" FromRole="Users" ToRole="Users_SystemAdministrator" />
+  </EntityType>
+  <EntityType Name="Users_BuisnessOwner">
+    <Key>
+      <PropertyRef Name="userName" />
+    </Key>
+    <Property Name="userName" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="User" Relationship="Self.FK_BuisnessOwner_inherits_User" FromRole="Users_BuisnessOwner" ToRole="Users" />
+    <NavigationProperty Name="Buisnesses" Relationship="CS_DB1Model.BuisnessUsers_BuisnessOwner" FromRole="Users_BuisnessOwner" ToRole="Buisness" />
+  </EntityType>
+  <EntityType Name="Users_Customer">
+    <Key>
+      <PropertyRef Name="userName" />
+    </Key>
+    <Property Name="age" Type="Int16" />
+    <Property Name="gender" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="userName" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="User" Relationship="Self.FK_Customer_inherits_User" FromRole="Users_Customer" ToRole="Users" />
+    <NavigationProperty Name="Categories" Relationship="Self.CategoryCustomer" FromRole="Users_Customer" ToRole="Categories" />
+    <NavigationProperty Name="Location" Relationship="CS_DB1Model.Users_CustomerLocation" FromRole="Users_Customer" ToRole="Location" />
+    <NavigationProperty Name="CatalogCoupons_SocialNetworkCoupon" Relationship="CS_DB1Model.Users_CustomerCatalogCoupons_SocialNetworkCoupon" FromRole="Users_Customer" ToRole="CatalogCoupons_SocialNetworkCoupon" />
+    <NavigationProperty Name="OrderedCoupons" Relationship="CS_DB1Model.Users_CustomerOrderedCoupon" FromRole="Users_Customer" ToRole="OrderedCoupon" />
+  </EntityType>
+  <EntityType Name="Users_SystemAdministrator">
+    <Key>
+      <PropertyRef Name="userName" />
+    </Key>
+    <Property Name="userName" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="User" Relationship="Self.FK_SystemAdministrator_inherits_User" FromRole="Users_SystemAdministrator" ToRole="Users" />
+    <NavigationProperty Name="CatalogCoupons" Relationship="CS_DB1Model.Users_SystemAdministratorCatalogCoupon" FromRole="Users_SystemAdministrator" ToRole="CatalogCoupon" />
+  </EntityType>
+  <Association Name="FK_BuisnessOwner_inherits_User">
+    <End Type="Self.User" Multiplicity="1" Role="Users">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="Self.Users_BuisnessOwner" Multiplicity="0..1" Role="Users_BuisnessOwner" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="userName" />
+      </Principal>
+      <Dependent Role="Users_BuisnessOwner">
+        <PropertyRef Name="userName" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Customer_inherits_User">
+    <End Role="Users" Type="Self.User" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Users_Customer" Type="Self.Users_Customer" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="userName" />
+      </Principal>
+      <Dependent Role="Users_Customer">
+        <PropertyRef Name="userName" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SystemAdministrator_inherits_User">
+    <End Role="Users" Type="Self.User" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Users_SystemAdministrator" Type="Self.Users_SystemAdministrator" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="userName" />
+      </Principal>
+      <Dependent Role="Users_SystemAdministrator">
+        <PropertyRef Name="userName" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CategoryCustomer">
+    <End Role="Categories" Type="Self.Category" Multiplicity="*" />
+    <End Role="Users_Customer" Type="Self.Users_Customer" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="CS_DBEntities3" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Buisnesses" EntityType="Self.Buisness" />
+    <EntitySet Name="CatalogCoupons" EntityType="Self.CatalogCoupon" />
+    <EntitySet Name="Categories" EntityType="Self.Category" />
+    <EntitySet Name="Locations" EntityType="Self.Location" />
+    <EntitySet Name="OrderedCoupons" EntityType="CS_DB1Model.OrderedCoupon" />
+    <EntitySet Name="Users" EntityType="Self.User" />
+    <EntitySet Name="Users_BuisnessOwner" EntityType="Self.Users_BuisnessOwner" />
+    <EntitySet Name="Users_Customer" EntityType="Self.Users_Customer" />
+    <EntitySet Name="Users_SystemAdministrator" EntityType="Self.Users_SystemAdministrator" />
+    <AssociationSet Name="FK_BuisnessOwner_inherits_User" Association="Self.FK_BuisnessOwner_inherits_User">
+      <End EntitySet="Users" Role="Users" />
+      <End EntitySet="Users_BuisnessOwner" Role="Users_BuisnessOwner" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Customer_inherits_User" Association="Self.FK_Customer_inherits_User">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Users_Customer" EntitySet="Users_Customer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SystemAdministrator_inherits_User" Association="Self.FK_SystemAdministrator_inherits_User">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Users_SystemAdministrator" EntitySet="Users_SystemAdministrator" />
+    </AssociationSet>
+    <AssociationSet Name="CategoryCustomer" Association="Self.CategoryCustomer">
+      <End Role="Categories" EntitySet="Categories" />
+      <End Role="Users_Customer" EntitySet="Users_Customer" />
+    </AssociationSet>
+    <AssociationSet Name="BuisnessLocation" Association="CS_DB1Model.BuisnessLocation">
+      <End Role="Buisness" EntitySet="Buisnesses" />
+      <End Role="Location" EntitySet="Locations" />
+    </AssociationSet>
+    <AssociationSet Name="BuisnessUsers_BuisnessOwner" Association="CS_DB1Model.BuisnessUsers_BuisnessOwner">
+      <End Role="Buisness" EntitySet="Buisnesses" />
+      <End Role="Users_BuisnessOwner" EntitySet="Users_BuisnessOwner" />
+    </AssociationSet>
+    <AssociationSet Name="BuisnessCategory" Association="CS_DB1Model.BuisnessCategory">
+      <End Role="Buisness" EntitySet="Buisnesses" />
+      <End Role="Category" EntitySet="Categories" />
+    </AssociationSet>
+    <AssociationSet Name="Users_CustomerLocation" Association="CS_DB1Model.Users_CustomerLocation">
+      <End Role="Users_Customer" EntitySet="Users_Customer" />
+      <End Role="Location" EntitySet="Locations" />
+    </AssociationSet>
+    <AssociationSet Name="Users_CustomerCatalogCoupons_SocialNetworkCoupon" Association="CS_DB1Model.Users_CustomerCatalogCoupons_SocialNetworkCoupon">
+      <End Role="Users_Customer" EntitySet="Users_Customer" />
+      <End Role="CatalogCoupons_SocialNetworkCoupon" EntitySet="CatalogCoupons_SocialNetworkCoupon" />
+    </AssociationSet>
+    <AssociationSet Name="CategoryCatalogCoupon" Association="CS_DB1Model.CategoryCatalogCoupon">
+      <End Role="Category" EntitySet="Categories" />
+      <End Role="CatalogCoupon" EntitySet="CatalogCoupons" />
+    </AssociationSet>
+    <AssociationSet Name="Users_SystemAdministratorCatalogCoupon" Association="CS_DB1Model.Users_SystemAdministratorCatalogCoupon">
+      <End Role="Users_SystemAdministrator" EntitySet="Users_SystemAdministrator" />
+      <End Role="CatalogCoupon" EntitySet="CatalogCoupons" />
+    </AssociationSet>
+    <EntitySet Name="CatalogCoupons_SocialNetworkCoupon" EntityType="CS_DB1Model.CatalogCoupons_SocialNetworkCoupon" />
+    <AssociationSet Name="CatalogCouponLocation" Association="CS_DB1Model.CatalogCouponLocation">
+      <End Role="CatalogCoupon" EntitySet="CatalogCoupons" />
+      <End Role="Location" EntitySet="Locations" />
+    </AssociationSet>
+    <AssociationSet Name="BuisnessCatalogCoupon" Association="CS_DB1Model.BuisnessCatalogCoupon">
+      <End Role="Buisness" EntitySet="Buisnesses" />
+      <End Role="CatalogCoupon" EntitySet="CatalogCoupons" />
+    </AssociationSet>
+    <AssociationSet Name="CatalogCoupons_SocialNetworkCouponCatalogCoupon" Association="CS_DB1Model.CatalogCoupons_SocialNetworkCouponCatalogCoupon">
+      <End Role="CatalogCoupons_SocialNetworkCoupon" EntitySet="CatalogCoupons_SocialNetworkCoupon" />
+      <End Role="CatalogCoupon" EntitySet="CatalogCoupons" />
+    </AssociationSet>
+    <AssociationSet Name="OrderedCouponCatalogCoupon" Association="CS_DB1Model.OrderedCouponCatalogCoupon">
+      <End Role="OrderedCoupon" EntitySet="OrderedCoupons" />
+      <End Role="CatalogCoupon" EntitySet="CatalogCoupons" />
+    </AssociationSet>
+    <AssociationSet Name="Users_CustomerOrderedCoupon" Association="CS_DB1Model.Users_CustomerOrderedCoupon">
+      <End Role="Users_Customer" EntitySet="Users_Customer" />
+      <End Role="OrderedCoupon" EntitySet="OrderedCoupons" />
+    </AssociationSet>
+  </EntityContainer>
+  <Association Name="BuisnessLocation">
+    <End Type="CS_DB1Model.Buisness" Role="Buisness" Multiplicity="*" />
+    <End Type="CS_DB1Model.Location" Role="Location" Multiplicity="1" />
+  </Association>
+  <Association Name="BuisnessUsers_BuisnessOwner">
+    <End Type="CS_DB1Model.Buisness" Role="Buisness" Multiplicity="*" />
+    <End Type="CS_DB1Model.Users_BuisnessOwner" Role="Users_BuisnessOwner" Multiplicity="1" />
+  </Association>
+  <Association Name="BuisnessCategory">
+    <End Type="CS_DB1Model.Buisness" Role="Buisness" Multiplicity="*" />
+    <End Type="CS_DB1Model.Category" Role="Category" Multiplicity="1" />
+  </Association>
+  <Association Name="Users_CustomerLocation">
+    <End Type="CS_DB1Model.Users_Customer" Role="Users_Customer" Multiplicity="*" />
+    <End Type="CS_DB1Model.Location" Role="Location" Multiplicity="1" />
+  </Association>
+  <Association Name="Users_CustomerCatalogCoupons_SocialNetworkCoupon">
+    <End Type="CS_DB1Model.Users_Customer" Role="Users_Customer" Multiplicity="1" />
+    <End Type="CS_DB1Model.CatalogCoupons_SocialNetworkCoupon" Role="CatalogCoupons_SocialNetworkCoupon" Multiplicity="*" />
+  </Association>
+  <Association Name="CategoryCatalogCoupon">
+    <End Type="CS_DB1Model.Category" Role="Category" Multiplicity="1" />
+    <End Type="CS_DB1Model.CatalogCoupon" Role="CatalogCoupon" Multiplicity="*" />
+  </Association>
+  <Association Name="Users_SystemAdministratorCatalogCoupon">
+    <End Type="CS_DB1Model.Users_SystemAdministrator" Role="Users_SystemAdministrator" Multiplicity="1" />
+    <End Type="CS_DB1Model.CatalogCoupon" Role="CatalogCoupon" Multiplicity="*" />
+  </Association>
+  <Association Name="CatalogCouponLocation">
+    <End Type="CS_DB1Model.CatalogCoupon" Role="CatalogCoupon" Multiplicity="*" />
+    <End Type="CS_DB1Model.Location" Role="Location" Multiplicity="1" />
+  </Association>
+  <Association Name="BuisnessCatalogCoupon">
+    <End Type="CS_DB1Model.Buisness" Role="Buisness" Multiplicity="1" />
+    <End Type="CS_DB1Model.CatalogCoupon" Role="CatalogCoupon" Multiplicity="*" />
+  </Association>
+  <Association Name="CatalogCoupons_SocialNetworkCouponCatalogCoupon">
+    <End Type="CS_DB1Model.CatalogCoupons_SocialNetworkCoupon" Role="CatalogCoupons_SocialNetworkCoupon" Multiplicity="*" />
+    <End Type="CS_DB1Model.CatalogCoupon" Role="CatalogCoupon" Multiplicity="1" />
+  </Association>
+  <Association Name="OrderedCouponCatalogCoupon">
+    <End Type="CS_DB1Model.OrderedCoupon" Role="OrderedCoupon" Multiplicity="*" />
+    <End Type="CS_DB1Model.CatalogCoupon" Role="CatalogCoupon" Multiplicity="1" />
+  </Association>
+  <Association Name="Users_CustomerOrderedCoupon">
+    <End Type="CS_DB1Model.Users_Customer" Role="Users_Customer" Multiplicity="1" />
+    <End Type="CS_DB1Model.OrderedCoupon" Role="OrderedCoupon" Multiplicity="*" />
+  </Association>
+</Schema>
